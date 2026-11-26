@@ -1,6 +1,13 @@
 import { request } from './client'
 import { moduleMeta } from '@/data/modules'
-import type { ActionResult, EntryRow, OverviewResult, PageResult } from '@/data/types'
+import type {
+  ActionResult,
+  BatchReceiptResult,
+  EntryRow,
+  JobBasisResult,
+  OverviewResult,
+  PageResult,
+} from '@/data/types'
 
 export { moduleMeta }
 
@@ -57,5 +64,17 @@ export async function downloadEntries(
 export async function loadOverview(): Promise<OverviewResult> {
   const response = await request('/api/overview')
   if (!response.ok) throw new Error('运营概览读取失败')
+  return await response.json()
+}
+
+export async function listBatchReceipts(batchId: string): Promise<BatchReceiptResult> {
+  const response = await request(`/api/exposure_log/batches/${encodeURIComponent(batchId)}/receipts`)
+  if (!response.ok) throw new Error('批次确认回执读取失败')
+  return await response.json()
+}
+
+export async function getJobBasis(id: number): Promise<JobBasisResult> {
+  const response = await request(`/api/metric_compute/jobs/${id}/basis`)
+  if (!response.ok) throw new Error('作业计算依据读取失败')
   return await response.json()
 }

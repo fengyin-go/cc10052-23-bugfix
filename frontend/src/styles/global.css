@@ -70,3 +70,22 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .analysis-chart { display: flex; align-items: flex-end; gap: 8px; height: 160px; padding: 12px 0; }
 .analysis-bar { flex: 1; border-radius: 4px 4px 0 0; background: var(--brand); min-width: 24px; position: relative; transition: height 0.4s; }
 .analysis-bar span { position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 10px; color: var(--muted); white-space: nowrap; }
+/* 批次确认回执与计算依据 */
+.receipt-panel { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin-bottom: 12px; }
+.receipt-query { display: flex; gap: 10px; align-items: center; }
+.receipt-title { font-size: 13px; font-weight: 600; }
+.receipt-query input { flex: 1; max-width: 320px; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; }
+.receipt-body { margin-top: 10px; }
+.receipt-summary { font-size: 13px; margin: 6px 0; }
+.receipt-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.receipt-columns h4 { margin: 8px 0 6px; font-size: 13px; }
+.receipt-history { font-size: 12px; color: var(--muted); }
+.window-chip { display: inline-block; background: #eef4ff; color: var(--brand); border-radius: 10px; padding: 1px 8px; font-size: 12px; margin: 0 4px 2px 0; }
+.data-table.compact th, .data-table.compact td { padding: 4px 8px; font-size: 12px; }
+.detail-list { display: grid; grid-template-columns: 120px 1fr; gap: 6px 10px; font-size: 13px; }
+.detail-list dt { color: var(--muted); }
+.detail-list dd { margin: 0; word-break: break-all; }
+.detail-json { background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; padding: 8px; font-size: 12px; max-height: 180px; overflow: auto; }
+.basis-panel { border-top: 1px solid var(--border); margin-top: 10px; padding-top: 8px; }
+.basis-panel h4 { margin: 4px 0 8px; font-size: 13px; }
+.revision-reason { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px; padding: 8px; font-size: 12px; }
